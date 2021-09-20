@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NovoUsuarioActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="30dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="60dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trocar foto"
+            android:textColor="@color/purple_200"
+            android:paddingTop="10dp"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Profissão"
+        android:textSize="20sp"
+        android:paddingTop="15dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Altura"
+        android:textSize="20sp"
+        android:paddingTop="15dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data de nascimento"
+        android:textSize="20sp"
+        android:paddingTop="15dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sexo"
+        android:textSize="20sp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textSize="20sp">
+
+            <RadioButton
+                android:id="@+id/buttonFeminino"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="Feminino"
+                android:textSize="20sp"/>
+
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="Masculino"
+                android:textSize="20sp"/>
+
+        </RadioGroup>
+
+
+</LinearLayout>
