@@ -51,12 +51,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-
-            >
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -82,7 +80,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -108,7 +106,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -132,7 +130,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -158,7 +156,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -187,41 +185,126 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:layout_marginTop="150dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-
+                android:id="@+id/card_view_balanca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
                 >
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/balanca"
-                    android:scaleType="centerCrop"
-                    />
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imageView_balanca"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/balanca"
+                        android:scaleType="centerCrop"
+                        android:padding="10dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@+id/imageView_balanca">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pesar Agora"
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Acompanhe o seu peso"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
 
             </androidx.cardview.widget.CardView>
 
 
+            <androidx.cardview.widget.CardView
+                android:layout_below="@id/card_view_balanca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                >
 
-        </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imageView_grafico"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/graficos"
+                        android:scaleType="centerCrop"
+                        android:padding="10dp"
+                        />
 
-    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@+id/imageView_grafico">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ver histórico"
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reveja as suas conquistas"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
 
 </LinearLayout>

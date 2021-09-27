@@ -86,11 +86,11 @@
             />
 
         <Button
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="ENTRAR"/>
+            android:layout_marginTop="20dp"
+            android:text="ENTRAR"
+            android:textColor="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,7 +135,7 @@
     <ImageView
         android:id="@+id/iv_bottom"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:src="@drawable/ic_wave_bottom"
         android:scaleType="centerCrop"/>
@@ -143,11 +143,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Desenvolvido por DSM2-b"
+        android:text="Desenvolvido por DS2M"
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:layout_marginBottom="10dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
 
 
