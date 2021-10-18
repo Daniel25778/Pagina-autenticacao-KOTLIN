@@ -86,6 +86,7 @@
             />
 
         <Button
+            android:id="@+id/button_Clicar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -113,11 +114,12 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/text_nao_tem_conta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Não tem uma conta? Criar uma conta"
                 android:layout_gravity="end"
-                android:textColor="@color/black"/>
+                android:text="Não tem uma conta? Criar uma conta"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
