@@ -8,7 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".NovoUsuarioActivity"
+    tools:context=".ui.NovoUsuarioActivity"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:padding="30dp"
@@ -65,7 +65,7 @@
                android:inputType="textPassword"
                android:hint="Dados para autenticação"
                android:textSize="20sp"
-               android:layout_marginBottom="15dp"
+               android:layout_marginBottom="20dp"
                />
 
            <TextView
@@ -73,6 +73,7 @@
                android:layout_height="wrap_content"
                android:hint="Email"
                android:textSize="20sp"
+               android:layout_marginBottom="12dp"
                />
 
            <EditText
@@ -86,7 +87,8 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:hint="Senha"
-               android:textSize="20sp"/>
+               android:textSize="20sp"
+               android:layout_marginBottom="12dp"/>
 
            <EditText
                android:id="@+id/edit_senha"
@@ -109,7 +111,8 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:hint="Nome"
-               android:textSize="20sp"/>
+               android:textSize="20sp"
+               android:layout_marginBottom="12dp"/>
 
            <EditText
                android:id="@+id/edit_nome"
@@ -122,7 +125,8 @@
                android:layout_height="wrap_content"
                android:hint="Profissão"
                android:textSize="20sp"
-               android:paddingTop="15dp"/>
+               android:paddingTop="15dp"
+               android:layout_marginBottom="12dp"/>
 
            <EditText
                android:id="@+id/edit_profissao"
@@ -134,7 +138,8 @@
                android:layout_height="wrap_content"
                android:hint="Altura"
                android:textSize="20sp"
-               android:paddingTop="15dp"/>
+               android:paddingTop="15dp"
+               android:layout_marginBottom="12dp"/>
 
            <EditText
                android:id="@+id/edit_altura"
@@ -146,7 +151,8 @@
                android:layout_height="wrap_content"
                android:hint="Data de nascimento"
                android:textSize="20sp"
-               android:paddingTop="15dp"/>
+               android:paddingTop="15dp"
+               android:layout_marginBottom="12dp"/>
 
            <EditText
                android:id="@+id/edit_data"

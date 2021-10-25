@@ -1,7 +1,8 @@
-package com.example.relativelayout
+package com.example.relativelayout.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.relativelayout.R
 
 class DashBoardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

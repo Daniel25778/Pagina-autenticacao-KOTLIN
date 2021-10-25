@@ -1,9 +1,8 @@
-package com.example.relativelayout
+package com.example.relativelayout.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import com.example.relativelayout.R
 
 
 class MainActivity : AppCompatActivity() {
