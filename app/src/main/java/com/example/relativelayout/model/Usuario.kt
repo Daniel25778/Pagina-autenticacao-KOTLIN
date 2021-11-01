@@ -11,5 +11,6 @@ data class Usuario(
         var altura: Double,
         var dataNascimento: LocalDate,
         var profissao: String,
-        var sexo: Char
+        var sexo: Char,
+        var fotoPerfil : String
 )

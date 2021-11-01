@@ -2,19 +2,25 @@ package com.example.relativelayout.ui
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64.encodeToString
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import com.example.relativelayout.R
 import com.example.relativelayout.model.Usuario
 import com.example.relativelayout.utils.convertStringToLocalDate
 import java.time.LocalDate
+import java.io.ByteArrayOutputStream
 
 import java.util.*
+
+const val CODE_IMAGE = 100
 
 class NovoUsuarioActivity : AppCompatActivity() {
 
@@ -26,6 +32,9 @@ class NovoUsuarioActivity : AppCompatActivity() {
     lateinit var editDataNascimento: EditText
     lateinit var buttonFeminino : RadioButton
     lateinit var buttonMasculino : RadioButton
+    lateinit var tvTrocarFoto : TextView
+    lateinit var ivFotoPerfil : ImageView
+    var imageBitmap: Bitmap? = null
 
 
 
@@ -41,9 +50,17 @@ class NovoUsuarioActivity : AppCompatActivity() {
         editDataNascimento = findViewById<EditText>(R.id.edit_data)
         buttonFeminino = findViewById<RadioButton>(R.id.button_feminino)
         buttonMasculino = findViewById<RadioButton>(R.id.button_masculino)
+        tvTrocarFoto = findViewById<TextView>(R.id.tv_trocar_foto)
+        ivFotoPerfil = findViewById<ImageView>(R.id.iv_foto_perfil)
+
+
 
 
         supportActionBar!!.title = "PERFIL"
+
+        tvTrocarFoto.setOnClickListener {
+            abrirGaleria()
+        }
 
         // criando o Calendário
         val calendario = Calendar.getInstance()
@@ -58,18 +75,73 @@ class NovoUsuarioActivity : AppCompatActivity() {
         etDataNascimento.setOnClickListener {
             val dp = DatePickerDialog(this,
                     DatePickerDialog.OnDateSetListener{view, _ano, _mes, _dia ->
-                        etDataNascimento.setText("$_dia/$_mes/$_ano")
-                    }, ano, mes, dia)
 
+                        var diaFinal = _dia
+                        var mesFinal = _mes + 1
+
+                        var mesString = "$mesFinal"
+                        var diaString = "$diaFinal"
+
+
+                        if((mesFinal) < 10){
+                            mesString  = "0$mesFinal"
+                        }
+
+                        if((diaFinal) < 10){
+                           diaString = "0$diaFinal"
+                        }
+
+                        etDataNascimento.setText("$diaString/$mesString/$_ano")
+                    }, ano, mes, dia)
             dp.show()
+
         }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, imagem: Intent?) {
+        super.onActivityResult(requestCode, resultCode, imagem)
+
+        if (requestCode == CODE_IMAGE && resultCode == -1){
+            //Recuperar a imagem do  stream
+            val fluxoImagem = contentResolver.openInputStream(imagem!!.data!!)
+
+            imageBitmap = BitmapFactory.decodeStream(fluxoImagem)
+
+            ivFotoPerfil.setImageBitmap(imageBitmap)
+
+        }
+    }
+
+    private  fun abrirGaleria(){
+
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+
+        // Abrir activity responsavel por exibir as imagens
+        //Esta activity retornará o conteudo selecionado
+        // para o nosso app
+
+        startActivityForResult(
+                Intent.createChooser( intent,
+                        "Escolha uma foto"),
+                CODE_IMAGE
+                )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_novo_usuario, menu)
         return true
     }
+
+    private fun encodeImage (bitmap: Bitmap): String? {
+        val bitmapArray = ByteArrayOutputStream ()
+        bitmap.compress (Bitmap.CompressFormat.JPEG, 100, bitmapArray)
+        val b = bitmapArray.toByteArray ()
+        Base64.encodeToString(b, Base64.DEFAULT )
+    }
+
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (validarCampos()){
@@ -92,7 +164,9 @@ class NovoUsuarioActivity : AppCompatActivity() {
                             'F'
                         }else{
                             'M'
-                        }
+                        },
+                        ""
+
                 )
 
             //Salvar o registro
